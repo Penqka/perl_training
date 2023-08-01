@@ -32,9 +32,12 @@ foreach my $key (sort {$a <=> $b} keys %rows) {
     foreach my $i ( @{$rows{$key}} ) {
         my @sentaces = split /\n/, $i;
         
-        foreach my $sentace (@sentaces) {
-            print OUT "$key: $sentace, \n";
+        
+        foreach my $sentence (@sentaces) {
+            $sentence =~ s/^\s+//;
+            print OUT "$key: $sentence, \n";
         }
     }
 }
 
+# TODO: make it sort them by len of sentance 
