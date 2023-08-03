@@ -13,9 +13,11 @@ open OUT, "> $destination" or die $!;
 my %rows = ();
 
 my $current_row_no = 1;
-
+$/ = "*****";
 
 foreach my $current_row (<IN>) {
+    # chomp $current_row;
+    $current_row =~ s/[ \t]+/ /g;
     my $key = length $current_row; 
 
     unless (exists $rows{$key}) {
@@ -35,7 +37,7 @@ foreach my $key (sort {$a <=> $b} keys %rows) {
         
         foreach my $sentence (@sentaces) {
             $sentence =~ s/^\s+//;
-            print OUT "$key: $sentence, \n";
+            print OUT "$key: $sentence \n";
         }
     }
 }
