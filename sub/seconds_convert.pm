@@ -4,13 +4,16 @@ use warnings;
 use strict;
 
 
-my ($hours, $minutes, $seconds) = secs2hms(6868);
-
-print "ARRAY $hours:$minutes:$seconds\n";
-
-my $time = secs2hms(6868);
-
-print "SCALAR: $time\n";
+sub ask_usr {
+    print "Hello please enter seconds: ";
+    my $seconds = <>;
+    chomp $seconds;
+    
+    my $result = secs2hms($seconds);
+    print "Your result is: $result\n";
+    
+    
+}
 
 sub secs2hms {
     my ($h, $m);
@@ -19,6 +22,8 @@ sub secs2hms {
     $m = int($s / 60); $s %= 60;
 
     return ($h,$m,$s) if wantarray;
-        return "$h:$m:$s\n";
+        return "$h:$m:$s";
 
 }
+
+ask_usr();

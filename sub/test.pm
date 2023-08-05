@@ -26,13 +26,29 @@ use strict;
 
 # test_arr(@c, @d);
 
-sub or_test {
-    $a = shift || "nothing";
-    print $a;
-}
+# sub or_test {
+#     $a = shift || "nothing";
+#     print $a;
+# }
 
 
 
-my $ref = \&or_test;
+# my $ref = \&or_test;
 
-$ref->('putka');
+# $ref->('hello');
+
+
+# my %hesh = (
+#     penko => 4,
+#     nadq => 'ivan'
+# );
+
+
+# if ($hesh{nadq}++) {
+#     print "true";
+# } else {
+#     print 'false';
+# };
+
+# print "seen\n" unless <> =~ /\w+/;
+
