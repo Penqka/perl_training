@@ -1,0 +1,3 @@
+hello my friend
+how are you doing
+perl is a great language
