@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use FindBin;
 use lib $FindBin::Bin;
-use person1;
+use Person;
 
 my $person = Person->new(
     surname => "Dimitrov",
@@ -13,9 +13,21 @@ my $person = Person->new(
     occupation => "Developer",
 );
 
-print $person->forename();
-# print Person->surname;
 
-# print "old address:", $person->address();
-# $person->address("Sofia");
-# print "new address:", $person->address();
+my $person2 = Person->new(
+    surname => "Ivanov",
+    forename => "Vanko",
+    address => "Sofia",
+    occupation => "DevOp",
+);
+
+# print "There are: ", $person2->headcount(), " people\n";
+
+
+# for my $i (Person->everyone()) {
+#     print $i->{forename}, " ", $i->{surname}, "\n";
+# }
+
+
+my $message = "Plati si toka neshtastink!";
+$person2->print_letter($message);
