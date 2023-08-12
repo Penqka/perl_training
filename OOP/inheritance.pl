@@ -6,15 +6,22 @@ use lib "/home/penko/perl/OOP/";
 use Employee;
 
 
-my $employee1 = Employee->new(
+my $employee = Employee->new(
     surname => "Todorov",
-    forename => "Mitko",
-    address => "Varna",
-    occupation => "PM",
+    employer => "Dogbert",
+    salary => "1550",
 );
 
 
-$employee1->salary(1000);
-print "inital salary: ", $employee1->salary(),"\n";
-$employee1->raise(500);
-print "new salary: ", $employee1->salary(),"\n";
+my $boss = $employee->employer;
+$boss->address("Plovdiv");
+
+my $dogbert = Employee->new (
+    surname => "Dogbert",
+    emplyer => "7777",
+    salary=>$employee->salary * 2,
+);
+
+$employee->employer($dogbert);
+
+
