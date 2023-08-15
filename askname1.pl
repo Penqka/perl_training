@@ -25,7 +25,7 @@ print end_html();
 
 
 sub generate_form {
-    return start_form,
+    return start_form, 
         h1("Please enter your name:"),
         p('Last name', textfield('last')),
         p('First name', textfield('first')),
